@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carwebsite
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: carwebsite
+  template:
+    metadata:
+      labels:
+        app: carwebsite
+    spec:
+      containers:
+      - name: carwebsite
+        image: IMAGE_TAG
+        ports:
+        - containerPort: 80
